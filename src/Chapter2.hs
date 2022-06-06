@@ -521,7 +521,7 @@ False
 -}
 isThird42 :: [Int] -> Bool
 isThird42 (_: _: 42: _) = True
-isThird42 _ = False
+isThird42 _             = False
 
 
 {- |
@@ -626,7 +626,7 @@ Implement a function that duplicates each element of the list
 
 -}
 duplicate :: [a] -> [a]
-duplicate []  = []
+duplicate []     = []
 duplicate (x:xs) = x : x : duplicate xs
 
 
@@ -643,8 +643,8 @@ Write a function that takes elements of a list only in even positions.
 [2,3,4]
 -}
 takeEven :: [Int] -> [Int]
-takeEven [] = []
-takeEven [x] = [x]
+takeEven []       = []
+takeEven [x]      = [x]
 takeEven (x:_:xs) = x : takeEven xs
 
 {- |
@@ -887,8 +887,8 @@ and reverses it.
   cheating!
 -}
 rewind :: [a] -> [a]
-rewind [] = []
-rewind [x] = [x]
+rewind []       = []
+rewind [x]      = [x]
 rewind (x:y:xs) = rewind xs ++ [y,x]
 
 
