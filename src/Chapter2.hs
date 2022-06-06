@@ -887,9 +887,11 @@ and reverses it.
   cheating!
 -}
 rewind :: [a] -> [a]
-rewind []       = []
-rewind [x]      = [x]
-rewind (x:y:xs) = rewind xs ++ [y,x]
+rewind input = go input []
+  where
+    go :: [a] -> [a] -> [a]
+    go [] output = output
+    go (x:xs) output = go xs (x:output)
 
 
 {-
