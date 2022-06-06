@@ -752,7 +752,7 @@ value of the element itself
 🕯 HINT: Use combination of 'map' and 'replicate'
 -}
 smartReplicate :: [Int] -> [Int]
-smartReplicate l = concat (map (\x -> replicate x x) l)
+smartReplicate = concatMap (\x -> replicate x x)
 
 {- |
 =⚔️= Task 9
@@ -766,7 +766,7 @@ the list with only those lists that contain a passed element.
 🕯 HINT: Use the 'elem' function to check whether an element belongs to a list
 -}
 contains :: Int -> [[Int]] -> [[Int]]
-contains num lists = filter (elem num) lists
+contains num = filter (elem num)
 
 
 {- |
@@ -890,7 +890,7 @@ rewind :: [a] -> [a]
 rewind input = go input []
   where
     go :: [a] -> [a] -> [a]
-    go [] output = output
+    go [] output     = output
     go (x:xs) output = go xs (x:output)
 
 
